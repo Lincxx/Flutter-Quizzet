@@ -3,7 +3,7 @@ class Question {
   bool questionAnswer;
 
   //constructor
-  Question({String q, bool a}) {
+  Question(String q, bool a) {
     quesitonText = q;
     questionAnswer = a;
   }
