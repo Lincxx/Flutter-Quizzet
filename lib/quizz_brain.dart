@@ -1,7 +1,10 @@
 import 'package:quizzet/question.dart';
 
 class QuizBrain {
-  List<Question> questionBank = [
+
+  int _questionNumber = 0;
+
+  List<Question> _questionBank = [
     Question('Gold is edible', true),
     Question(
         'The giant panda spends 14-16 hours each day eating bamboo.', true),
@@ -17,4 +20,22 @@ class QuizBrain {
     Question('Central Park is thrice the size of Vatican City', true),
     Question('CDC has a vial of smallpox', true),
   ];
+  
+  void nextQuestion(){
+    if(_questionNumber < _questionBank.length - 1) {
+      _questionNumber++;
+    }
+    print(_questionNumber);
+    print(_questionBank.length);
+  }
+
+  String getQuestionText() {
+    return _questionBank[_questionNumber].quesitonText;
+  }
+
+   bool getQuestionAnswer() {
+    return _questionBank[_questionNumber].questionAnswer;
+  }
+
+
 }
