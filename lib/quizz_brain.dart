@@ -1,7 +1,6 @@
 import 'package:quizzet/question.dart';
 
 class QuizBrain {
-
   int _questionNumber = 0;
 
   List<Question> _questionBank = [
@@ -20,9 +19,9 @@ class QuizBrain {
     Question('Central Park is thrice the size of Vatican City', true),
     Question('CDC has a vial of smallpox', true),
   ];
-  
-  void nextQuestion(){
-    if(_questionNumber < _questionBank.length - 1) {
+
+  void nextQuestion() {
+    if (_questionNumber < _questionBank.length - 1) {
       _questionNumber++;
     }
     print(_questionNumber);
@@ -33,9 +32,19 @@ class QuizBrain {
     return _questionBank[_questionNumber].quesitonText;
   }
 
-   bool getQuestionAnswer() {
+  bool getQuestionAnswer() {
     return _questionBank[_questionNumber].questionAnswer;
   }
 
+  bool isFinished() {
+    if (_questionNumber == _questionBank.length - 1) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
+  void reset() {
+    _questionNumber = 0;
+  }
 }
